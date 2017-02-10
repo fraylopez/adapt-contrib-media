@@ -95,7 +95,49 @@
           "title": "Type",
           "inputType": "Text",
           "validators": [],
-          "help": "Enter the 'Source URL' type, for a YouTube link this would be video/youtube, and video/vimeo for Vimeo"
+          "help": "Enter the 'Source URL' type, for a YouTube link this would be video/youtube and video/vimeo for Vimeo"
+        },
+		"useBrightcove": {
+		  "type":"boolean",
+		  "required":false,
+		  "default": false,
+		  "title": "Use Brightcove",
+		  "inputType": {"type": "Boolean", "options": [true, false]},
+		  "validators": [],
+		  "help": "If set to 'true', will play videos from Brightcove."
+		},
+		
+		"brightcove": {
+          "type":"object",
+          "required":false,
+          "title": "Brightcove settings",
+          "help": "Enter Brightcove video configurations",
+		  "properties":{
+			  "accountId": {
+				  "type": "string",
+				  "required": true,
+				  "default": "",
+				  "inputType": "Text",
+				  "validators": [],
+				  "help": "This is the Brightcove account id"
+				},
+				"playerId": {
+				  "type": "string",
+				  "required": true,
+				  "default": "default",
+				  "inputType": "Text",
+				  "validators": [],
+				  "help": "This is the Brightcove player id"
+				},
+				"videoId": {
+				  "type": "string",
+				  "required": true,
+				  "default": "",
+				  "inputType": "Text",
+				  "validators": [],
+				  "help": "This is the Brightcove video id"
+				}
+		  }
         },
         "poster": {
           "type":"string",

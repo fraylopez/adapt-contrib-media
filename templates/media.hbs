@@ -1,35 +1,51 @@
 <div class="media-inner component-inner" role="region" aria-label="{{_globals._components._media.ariaRegion}} {{#if _media.transcriptLink}}{{_globals._components._media.transcriptButton}}{{/if}}" {{#if _globals._components._media.ariaRegion}}tabindex="0"{{/if}}>
     {{> component this}}
     <div class="media-widget component-widget a11y-ignore-aria">
+	{{#if _media.useBrightcove}}
+		<div class="ghost-container">
 
-    {{#if _media.mp3}}
-      <audio src="{{_media.mp3}}" type="audio/mp3" style="width: 100%; height: 100%;"/>
-    {{else}}
-      {{#if _media.ogg}}
-        <audio src="{{_media.ogg}}" type="audio/ogg" style="width: 100%; height: 100%;"/>
-      {{else}}
-        <video preload="none" width="640" height="360" {{#if _playsinline}}playsinline{{/if}} {{#if_value_equals _media.type "video/vimeo"}}{{else}}poster="{{_media.poster}}"{{/if_value_equals}} style="width:100%; height:100%;" controls="controls">
-          {{#if _media.source}}
-            <source src="{{_media.source}}" type="{{_media.type}}"/>
-          {{else}}
-            {{#if _media.mp4}}
-              <source src="{{_media.mp4}}" type="video/mp4"/>
-            {{/if}}
-            {{#if _media.ogv}}
-              <source src="{{_media.ogv}}" type="video/ogg"/>
-            {{/if}}
-            {{#if _media.webm}}
-              <source src="{{_media.webm}}" type="video/webm"/>
-            {{/if}}
-          {{/if}}
-          {{#if _useClosedCaptions}}
-              {{#each _media.cc}}
-                  <track kind="subtitles" src="{{src}}" type="text/vtt" srclang="{{srclang}}" />
-              {{/each}}
-          {{/if}}
-        </video>
-      {{/if}}
-    {{/if}}
+			<img src="data:image/gif;base64,R0lGODlhEAAJAIAAAP///wAAACH5BAEAAAAALAAAAAAQAAkAAAIKhI+py+0Po5yUFQA7">
+
+				<iframe 
+					src="http://players.brightcove.net/{{_media.brightcove.accountId}}/{{_media.brightcove.playerId}}_default/index.html?videoId={{_media.brightcove.videoId}}"
+					sandbox="allow-same-origin allow-scripts allow-forms" 
+					scrolling="no"
+					allowfullscreen 
+					webkitallowfullscreen 
+					mozallowfullscreen
+				>
+			</iframe>
+		</div>
+	{{else}}
+		{{#if _media.mp3}}
+		  <audio src="{{_media.mp3}}" type="audio/mp3" style="width: 100%; height: 100%;"/>
+		{{else}}
+		  {{#if _media.ogg}}
+			<audio src="{{_media.ogg}}" type="audio/ogg" style="width: 100%; height: 100%;"/>
+		  {{else}}
+			<video preload="none" width="640" height="360" {{#if _playsinline}}playsinline{{/if}} {{#if_value_equals _media.type "video/vimeo"}}{{else}}poster="{{_media.poster}}"{{/if_value_equals}} style="width:100%; height:100%;" controls="controls">
+			  {{#if _media.source}}
+				<source src="{{_media.source}}" type="{{_media.type}}"/>
+			  {{else}}
+				{{#if _media.mp4}}
+				  <source src="{{_media.mp4}}" type="video/mp4"/>
+				{{/if}}
+				{{#if _media.ogv}}
+				  <source src="{{_media.ogv}}" type="video/ogg"/>
+				{{/if}}
+				{{#if _media.webm}}
+				  <source src="{{_media.webm}}" type="video/webm"/>
+				{{/if}}
+			  {{/if}}
+			  {{#if _useClosedCaptions}}
+				  {{#each _media.cc}}
+					  <track kind="subtitles" src="{{src}}" type="text/vtt" srclang="{{srclang}}" />
+				  {{/each}}
+			  {{/if}}
+			</video>
+		  {{/if}}
+		{{/if}}
+	{{/if}}
     </div>
     {{#if _transcript}}
     <div class="media-transcript-container">

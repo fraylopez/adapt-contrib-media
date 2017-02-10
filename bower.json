@@ -11,7 +11,7 @@
     "_media.mp4",
     "_media.poster"
   ],
-  "description": "Playback of video and audio with a Flash Player fallback for IE8+",
+  "description": "Playback of video and audio with a Flash Player fallback for IE8+ (Extended with Brightcove source)",
   "main": "/js/adapt-contrib-media.js",
   "keywords": [
     "adapt-plugin",
