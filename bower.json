@@ -2,7 +2,7 @@
     "name": "adapt-media-brightcove",
     "repository": "https://github.com/fraylopez/adapt-media-brightcove.git",
     "framework": "~2.0.13",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "homepage": "https://github.com/fraylopez/adapt-media-brightcove",
     "issues": "https://github.com/fraylopez/adapt-media-brightcove/issues",
     "displayName": "Media Brightcove",
