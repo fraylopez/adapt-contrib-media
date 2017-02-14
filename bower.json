@@ -1,7 +1,7 @@
 {
     "name": "adapt-media-brightcove",
-    "repository": "https://github.com/fraylopez/adapt-media-brightcove",
-    "framework": "^2.0.13",
+    "repository": "https://github.com/fraylopez/adapt-media-brightcove.git",
+    "framework": "~2.0.13",
     "version": "1.0.0",
     "homepage": "https://github.com/fraylopez/adapt-media-brightcove",
     "issues": "https://github.com/fraylopez/adapt-media-brightcove/issues",
@@ -12,7 +12,7 @@
         "_media.mp4",
         "_media.poster"
     ],
-    "description": "Playback of video and audio with a Flash Player fallback for IE8+ (Extended with Brightcove source)",
+    "description": "adapt-contrib-media extended with Brightcove source",
     "main": "/js/adapt-contrib-media.js",
     "keywords": [
         "adapt-plugin",
