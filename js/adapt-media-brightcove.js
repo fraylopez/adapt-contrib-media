@@ -28,7 +28,7 @@ define([
         }
     }
 
-    var Media = ComponentView.extend({
+    var MediaBrightcove = ComponentView.extend({
 
         events: {
             "click .media-inline-transcript-button": "onToggleInlineTranscript"
@@ -393,8 +393,8 @@ define([
         }
     });
 
-    Adapt.register('media', Media);
+    Adapt.register('media-brightcove', MediaBrightcove);
 
-    return Media;
+    return MediaBrightcove;
 
 });
